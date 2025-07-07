@@ -1,6 +1,20 @@
 // cust
-.CheckInCalendar-AddButton {
-    float: right;
+.CheckInCalendar-TopBar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--size-4-4);
+
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--background-modifier-border);
+}
+
+.CheckInCalendar-FileEmbed {
+    // margin-top: 30.562px;
+    @margin: -3px;
+    margin-right: calc(-24px + @margin);
+    margin-top: @margin;
+    margin-bottom: calc(3px + @margin);
+    margin-left: @margin;
 }
 
 // orig
@@ -8,7 +22,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--size-4-4);
-    overflow: auto
+
+    padding: 1rem;
 }
 
 .CheckInCalendar-Container::-webkit-scrollbar {
@@ -54,7 +69,9 @@
     gap: var(--size-4-1);
     color: var(--text-muted);
     font-weight: var(--font-semibold);
-    width: 100%
+    width: 100%;
+
+    font-size: 16px;
 }
 
 .CheckInCalendar-TaskTitle:hover {
@@ -64,7 +81,9 @@
 .CheckInCalendar-TaskOverview {
     font-size: var(--font-ui-smaller);
     font-weight: var(--font-normal);
-    color: var(--text-faint)
+    color: var(--text-faint);
+
+    line-height: 2rem;
 }
 
 .CheckInCalendar-Item {
@@ -72,21 +91,13 @@
     flex-direction: column;
     gap: var(--size-4-2);
     padding: var(--size-4-2);
-    border: 1px solid var(--background-modifier-border);
-    border-radius: var(--radius-s)
-}
-
-.CheckInCalendar-Records {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-row-gap: var(--size-4-2);
-    gap: var(--size-4-1)
+    border: 6px double var(--background-modifier-border); // 1px solid var(--background-modifier-border)
+    border-radius: var(--radius-s);
 }
 
 .CheckInCalendar-Record-Weekday {
     color: var(--text-faint);
-    font-size: 8px;
+    font-size: 9px; // 8px
     padding-bottom: var(--size-4-1)
 }
 
@@ -99,12 +110,26 @@
     padding: var(--size-2-1);
     border-radius: var(--radius-s);
     background-color: transparent;
-    overflow: hidden
+    overflow: hidden;
+}
+
+
+// 
+.CheckInCalendar-Records {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: var(--size-4-2);
+    gap: var(--size-4-1);
 }
 
 .CheckInCalendar-Record {
     aspect-ratio: 1/1;
-    max-height: 16px;
+    max-height: 17px; // 16px
+
+    width: 100%; // 确保宽度填满容器，保持正方形
+    height: auto; // 高度自动调整 
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,7 +138,7 @@
     border-radius: var(--radius-s);
     background-color: #ebedf080;
     overflow: hidden;
-    font-size: 8px;
+    font-size: 9px; // 8px
     color: var(--text-faint);
     text-align: center
 }
@@ -130,5 +155,5 @@
 
 .CheckInCalendar-Record.CheckInCalendar-Record_completed {
     background-color: hsl(var(--interactive-accent-hsl), .6);
-    color: var(--text-on-accent)
+    color: white; // var(--text-on-accent)
 }
