@@ -25,7 +25,7 @@ export default class MyPlugin extends Plugin {
 			(leaf: WorkspaceLeaf) => new CheckInCalendarView(leaf, this)
 		);
 
-		this.registerExtensions(["cyu"], VIEW_TYPE_CHECK_IN_CALENDAR);
+		this.registerExtensions(["ccc"], VIEW_TYPE_CHECK_IN_CALENDAR);
 
 		// this.registerEvent(
 		// 	this.app.workspace.on("file-open", async (file) => {
